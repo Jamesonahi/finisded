@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Abuja-Based Entertainers</title>
+    <link rel="stylesheet" href="./assets/styles/main.css" />
+  </head>
+
+  <body>
+  
+    <div id="output"></div>
+    
+    <script src="js/index.js" defer></script>
+  </body>
+  <body>
+    <div class="container">
+      <header>
+        <nav>
+          <a href="./" id="logo">
+            <img
+              src="./assets/images/logo.jpeg"
+              alt="Abuja-Based Entertainers"
+            />
+          </a>
+
+          <div id="open" class="btnMenu">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3.75 6.75h16.5M3.75 12H12m-8.25 5.25h16.5"
+              />
+            </svg>
+            <span>Menu</span>
+          </div>
+          <ul>
+            <li><a href="./">Home</a></li>
+            <li><a href="./about.html">About Us</a></li>
+            <!-- <li><a href="">Entertainers</a></li> -->
+            <li><a href="./events.html" class="active">Our Events</a></li>
+          </ul>
+        </nav>
+
+        <ul id="outside">
+          <li><a href="./contact-us.html">Contact Us</a></li>
+          <li><a href="">Join Us</a></li>
+        </ul>
+      </header>
+      <div class="mobile">
+        <span id="cancelBtn">Cancel</span>
+        <ul>
+          <li><a href="./">Home</a></li>
+          <li><a href="./about.html">About Us</a></li>
+          <li><a href="./events.html" class="active">Our Events</a></li>
+          <li><a href="./contact-us.html">Contact Us</a></li>
+          <li><a href="">Join Us</a></li>
+        </ul>
+      </div>
+      <main>
+        <h3>
+          Ready to elevate your talent and make waves in the Entertianment industry
+        </h3>
+        <section id="talent-join">
+         
+          <p id="class mt-4">Join Us today to unlock endless opportunities to showcase your
+            skills, connect with industry professionals, and catapult your
+            career to new heights. you can register by filling the form below to begin your journey
+            towards artistic excellence.</p><br>
+          <p>
+            
+          </p>
+        
+        </section>
+      </main>
+      <section id="registration" class="container mt-5 mb-5">
+        <h2>Registration Form</h2>
+        <form id="user-form">
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email address:</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone number:</label>
+            <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter your phone number" required>
+          </div>
+          <div class="form-group">
+            <label for="address">Address:</label>
+            <input class="form-control" id="address" rows="3" name="address" placeholder="Enter your address" required></textarea>
+          </div>
+          <button type="submit" id="form-button" class="btn btn-primary">Submit</button>
+      
+        </form>
+      
+      </section>
+
+      <footer>
+        <ul>
+          <li>
+            <strong>Office Address</strong>
+            <p>
+              No. 63, Zone E, Apo Resettlement. <br />
+              Abuja-FCT Nigeria.
+            </p>
+          </li>
+
+          <li>
+            <strong>Social Handles</strong>
+            <div id="social-group">
+              <span>
+                <img src="./assets/images/social/facebook.png" alt="Facebook" />
+                Facebook
+              </span>
+              <span>
+                <img
+                  src="./assets/images/social/instagram.png"
+                  alt="Instagram"
+                />
+                Instagram
+              </span>
+              <span>
+                <img src="./assets/images/social/twitter.png" alt="X" /> Twitter
+              </span>
+              <span>
+                <img src="./assets/images/social/whatsapp.png" alt="Whatsapp" />
+                WhatsApp
+              </span>
+            </div>
+          </li>
+          <li>
+            <strong>Contact Address</strong>
+            <p>
+              <b>Email:</b> abujabasedentertainers@gmail.com <br />
+              <b>Phone:</b> 09064768764
+            </p>
+          </li>
+        </ul>
+        <div id="bottom">
+          <p>&copy; 2024 | All Right Reserved.</p>
+          <a href="">Developed by <b>ContriveLab</b></a>
+        </div>
+      </footer>
+    </div>
+  </body>
+  <script>
+    const cancelBtn = document.getElementById("cancelBtn");
+    const openBtn = document.getElementById("open");
+    const mobileNav = document.querySelector(".mobile");
+
+    cancelBtn.addEventListener("click", function () {
+      mobileNav.classList.remove("toggle");
+    });
+
+    openBtn.addEventListener("click", function () {
+      mobileNav.classList.add("toggle");
+    });
+  </script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</html>

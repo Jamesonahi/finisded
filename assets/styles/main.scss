@@ -1,0 +1,888 @@
+@import "./mixin";
+@import "./fonts.scss";
+
+// $primaryDark: #550507;
+$primaryDark: #1d0203;
+$primary: #ec1c28;
+$secondary: #020202;
+
+$border: rgb(218, 216, 216);
+
+$text: #666;
+
+body {
+  margin: 0;
+  padding: 0;
+}
+* {
+  font-family: "Manrope", sans-serif;
+  color: $secondary;
+}
+
+header {
+  border-bottom: 1px solid #e3e3e3;
+  padding: 10px 8% 6px 8%;
+  background: white;
+  position: relative;
+
+  @include tablet() {
+    padding: 10px 6% 6px 6%;
+  }
+
+  @include mobile() {
+    padding: 10px 4% 6px 4%;
+  }
+
+  @include phone() {
+    padding: 4px 4% 1px 4%;
+  }
+
+  display: flex;
+  justify-content: space-between;
+
+  .btnMenu {
+    display: none;
+
+    @include phone() {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: #01081a;
+      padding: 10px 15px;
+
+      svg {
+        width: 24px;
+        height: 24px;
+        stroke: #fff;
+      }
+      span {
+        color: #fff;
+        font-size: 16px;
+      }
+    }
+
+    @include semiPhone() {
+      padding: 8px 10px;
+      gap: 5px;
+
+      svg {
+        width: 18px;
+        height: 18px;
+      }
+      span {
+        font-size: 12px;
+      }
+    }
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+
+    li {
+      list-style-type: none;
+      a {
+        transition: all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+        text-decoration: none;
+        padding: 10px 20px;
+        @include mobile() {
+          padding: 10px 15px;
+        }
+        font-weight: 500;
+        font-family: "Syne", sans-serif;
+      }
+    }
+  }
+
+  nav {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 40px;
+    @include mobile() {
+      gap: 30px;
+    }
+
+    @include phone() {
+      display: flex;
+      width: 100%;
+      padding: 5px 0;
+      justify-content: space-between;
+    }
+
+    #logo {
+      width: 180px;
+
+      @include mobile() {
+        width: 140px;
+      }
+
+      @include phone() {
+        width: 120px;
+      }
+
+      @include semiPhone() {
+        width: 90px;
+      }
+
+      img {
+        width: 100%;
+      }
+
+      &:hover {
+        background: none;
+      }
+    }
+
+    a {
+      &:hover {
+        background: $primary;
+        color: #fff;
+      }
+    }
+
+    .active {
+      color: $primary;
+    }
+  }
+
+  #outside {
+    li {
+      &:last-child {
+        a {
+          background: #01081a;
+          color: #fff;
+          padding: 14px 20px;
+        }
+      }
+    }
+    .active {
+      color: $primary;
+    }
+    a {
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+
+  nav ul,
+  #outside {
+    @include phone() {
+      display: none;
+    }
+  }
+}
+
+.mobile {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 100;
+  width: 80%;
+
+  * {
+    color: #e3e3e3;
+  }
+
+  @include phone() {
+    background: $primaryDark;
+    flex-direction: column;
+    background: $primaryDark;
+    align-items: end;
+    padding: 20px 10%;
+    span {
+      height: 40px;
+      width: fit-content;
+      display: block;
+    }
+    ul {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      gap: 10px;
+      li {
+        list-style-type: none;
+        a {
+          text-decoration: none;
+          display: block;
+          padding: 10px 20px;
+          transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+          &:hover {
+            color: #ec1c28;
+          }
+        }
+        .active {
+          color: #ec1c28;
+        }
+      }
+    }
+  }
+}
+
+.toggle {
+  display: none;
+  @include phone() {
+    display: flex;
+  }
+}
+
+#slider {
+  overflow: hidden;
+  //   overflow-x: scroll;
+  margin: 0 auto;
+  display: flex;
+  position: relative;
+  background: $secondary;
+  width: 100%;
+  .swiper-slide {
+    // margin-right: 0px !important;
+    // background: #ec1c28;
+    background: rgba($primary, 0.071);
+    height: fit-content;
+    width: fit-content;
+
+    img {
+      height: 100%;
+      object-fit: contain;
+
+      @include phone() {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.swiper-slide-active img {
+  animation: zoomIn 8s infinite; /* Adjust duration as needed */
+}
+
+#talent-join {
+  background: rgba($primary, 0.071);
+  padding: 50px 6%;
+
+  p,
+  h3 {
+    text-align: center;
+  }
+
+  p {
+    max-width: 900px;
+    width: 86%;
+    font-size: 20px;
+    margin: 15px auto;
+  }
+
+  h3 {
+    font-family: "Syne", sans-serif;
+    font-size: 30px;
+    max-width: 800px;
+    width: 80%;
+    margin: inherit;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  a {
+    font-size: 26px;
+    color: #ec1c28;
+    margin: 20px auto;
+    display: block;
+    width: fit-content;
+    text-align: center;
+    font-family: "Syne", sans-serif;
+  }
+
+  @include mobile() {
+    padding: 50px 4%;
+    p,
+    h3 {
+      width: 100%;
+    }
+    p {
+      font-size: 16px;
+    }
+    h3 {
+      font-size: 24px;
+    }
+    a {
+      font-size: 21px;
+      margin: 16px auto;
+    }
+  }
+
+  @include semiPhone() {
+    padding: 40px 4%;
+    p {
+      font-size: 14px;
+    }
+    h3 {
+      font-size: 21px;
+    }
+    a {
+      font-size: 16px;
+      margin: 12px auto;
+    }
+  }
+
+  @include smallPhone() {
+    padding: 35px 3%;
+  }
+}
+
+#postpone {
+  font-size: 100px;
+  font-family: "Syne", sans-serif;
+  text-align: center;
+  padding: 50px 8%;
+
+  @include bigTablet() {
+    font-size: 80px;
+  }
+
+  @include tablet() {
+    font-size: 70px;
+  }
+
+  @include mobile() {
+    font-size: 60px;
+  }
+
+  @include phone() {
+    font-size: 50px;
+  }
+
+  @include semiPhone() {
+    font-size: 40px;
+  }
+
+  @include smallPhone() {
+    font-size: 30px;
+  }
+}
+
+#about {
+  .page-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #e3e3e3;
+    min-height: 160px;
+    padding: 30px 10%;
+    h1,
+    p {
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      font-size: 17px;
+      color: #ec1c28;
+      font-family: "Fuzzy Bubbles", sans-serif;
+    }
+
+    p {
+      font-size: 35px;
+      max-width: 800px;
+      width: 100%;
+      text-align: center;
+      font-weight: 500;
+      font-family: "Syne", sans-serif;
+    }
+
+    @include mobile() {
+      padding: 20px 8%;
+      min-height: 120px;
+
+      h1 {
+        font-size: 15px;
+      }
+      p {
+        font-size: 28px;
+      }
+    }
+
+    @include phone() {
+      padding: 20px 5%;
+      min-height: 120px;
+
+      h1 {
+        font-size: 14px;
+      }
+      p {
+        font-size: 24px;
+      }
+    }
+
+    @include smallPhone() {
+      padding: 0px 3%;
+
+      h1 {
+        font-size: 12px;
+        margin: 0;
+      }
+      p {
+        font-size: 18px;
+      }
+    }
+  }
+
+  #lookingfor,
+  #whatwedo,
+  #chase {
+    padding: 80px 8%;
+
+    h3 {
+      font-family: "Syne", sans-serif;
+      font-weight: bold;
+      font-size: 30px;
+      margin-bottom: 0;
+    }
+
+    @include mobile() {
+      padding: 60px 6%;
+      h3 {
+        font-size: 27px;
+      }
+    }
+
+    @include phone() {
+      padding: 50px 5%;
+      h3 {
+        font-size: 24px;
+      }
+    }
+
+    @include smallPhone() {
+      padding: 30px 3%;
+      h3 {
+        font-size: 20px;
+      }
+    }
+  }
+
+  #chase {
+    display: grid;
+    grid-template-columns: 50% 47%;
+    gap: 3%;
+    justify-content: center;
+    align-items: center;
+
+    .grid-image {
+      display: grid;
+      overflow: hidden;
+      //   border-radius: 80px;
+      margin-top: 10px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+
+      img {
+        width: 100%;
+        border-radius: 20px;
+      }
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 160%;
+    }
+
+    @include mobile() {
+      align-items: start;
+      grid-template-columns: 45% 52%;
+
+      .grid-image {
+        display: flex;
+        flex-direction: column;
+
+        img {
+          border-radius: 16px;
+
+          &:nth-child(odd) {
+            display: none;
+          }
+        }
+      }
+    }
+
+    @include phone() {
+      display: flex;
+      flex-direction: column-reverse;
+
+      p {
+        font-size: 16px;
+      }
+      .grid-image {
+        display: grid;
+        margin-top: 6px;
+
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5px;
+        img {
+          border-radius: 10px;
+          &:nth-child(odd) {
+            display: block;
+          }
+        }
+      }
+    }
+
+    @include semiPhone() {
+      p {
+        font-size: 14px;
+      }
+    }
+  }
+
+  #whatwedo,
+  #lookingfor {
+    h3 {
+      margin-bottom: 40px;
+      margin-top: 0;
+
+      @include mobile() {
+        margin-bottom: 30px;
+      }
+      @include phone() {
+        margin-bottom: 25px;
+      }
+      @include semiPhone() {
+        margin-bottom: 18px;
+      }
+    }
+    ul {
+      margin: 0;
+      padding: 0;
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px 30px;
+
+      @include bigTablet() {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px 20px;
+      }
+
+      @include semiPhone() {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      li {
+        list-style-type: none;
+        line-height: 160%;
+
+        strong {
+          display: block;
+          font-family: "Syne", sans-serif;
+          margin-bottom: 6px;
+          font-weight: bold;
+          font-size: 18px;
+        }
+
+        @include phone() {
+          font-size: 14px;
+          strong {
+            font-size: 16px;
+          }
+        }
+
+        @include smallPhone() {
+          font-size: 13px;
+          strong {
+            font-size: 15px;
+          }
+        }
+      }
+    }
+  }
+  #whatwedo {
+    background: rgba(#2e4975, 0.12);
+
+    display: grid;
+    grid-template-columns: 300px auto;
+
+    @include mobile() {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+#contact-us {
+  padding: 50px 10%;
+  //   background: rgba($primary, 0.071);
+
+  ul {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 0;
+    padding: 0;
+
+    li {
+      list-style-type: none;
+
+      a {
+        transition: all 0.5 cubic-bezier(0.215, 0.61, 0.355, 1);
+        &:hover {
+          color: #ec1c28;
+        }
+      }
+
+      strong {
+        font-family: "Syne", sans-serif;
+        font-size: 24px;
+        margin-bottom: 15px;
+        display: block;
+      }
+      p {
+        font-size: 17px;
+        margin: 0;
+        margin-bottom: 20px;
+        line-height: 160%;
+      }
+
+      #social-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 14px;
+        a {
+          text-decoration: none;
+          display: flex;
+          gap: 2px;
+          align-items: center;
+          img {
+            width: 27px;
+            height: 27px;
+
+            @include semiPhone() {
+              width: 18px;
+              height: 18px;
+            }
+          }
+          font-size: 14px;
+
+          @include semiPhone() {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+
+  @include bigTablet() {
+    padding: 50px 8%;
+  }
+
+  @include mobile() {
+    padding: 50px 6%;
+    ul {
+      grid-template-columns: repeat(2, 1fr);
+
+      li {
+        strong {
+          font-size: 22px;
+          margin-bottom: 13px;
+        }
+        p {
+          font-size: 16px;
+          margin-bottom: 15px;
+        }
+      }
+    }
+  }
+
+  @include phone() {
+    padding: 50px 4%;
+
+    ul {
+      li {
+        strong {
+          font-size: 20px;
+          margin-bottom: 8px;
+        }
+        p {
+          font-size: 15px;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+
+  @include semiPhone() {
+    padding: 50px 4%;
+    ul {
+      display: flex;
+      flex-direction: column;
+
+      li {
+        strong {
+          font-size: 18px;
+          margin-bottom: 6px;
+        }
+        p {
+          font-size: 14px;
+          margin-bottom: 5px;
+        }
+      }
+    }
+  }
+
+  @include smallPhone() {
+    padding: 50px 3%;
+  }
+}
+
+footer {
+  background-color: $secondary;
+  //   background-color: #305080;
+  padding: 60px 10%;
+  //   padding-bottom: 0;
+
+  @include tablet() {
+    padding: 60px 6%;
+  }
+
+  @include mobile() {
+    padding: 50px 4%;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+
+    @include mobile() {
+      gap: 20px;
+      grid-template-columns: repeat(2, 1fr);
+
+      li:nth-child(3) {
+        grid-column: span 2;
+      }
+    }
+
+    @include semiPhone() {
+      gap: 20px;
+      grid-template-columns: repeat(1, 1fr);
+
+      li:nth-child(3) {
+        grid-column: span 1;
+      }
+    }
+
+    li {
+      list-style-type: none;
+
+      * {
+        color: #e3e3e3;
+      }
+      strong {
+        font-size: 20px;
+        margin-bottom: 20px;
+        display: block;
+        @include semiPhone() {
+          margin-bottom: 8px;
+          font-size: 18px;
+        }
+      }
+      b {
+        font-weight: 500;
+      }
+      p {
+        font-weight: 300;
+        @include semiPhone() {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  #social-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2px 14px;
+    span {
+      display: flex;
+      align-items: center;
+      width: fit-content;
+      height: 30px;
+      gap: 4px;
+      img {
+        width: 20px;
+      }
+    }
+
+    @include phone() {
+      gap: 2px 10px;
+
+      span {
+        gap: 4px;
+        font-size: 14px;
+        img {
+          width: 16px;
+        }
+      }
+    }
+  }
+
+  #bottom {
+    display: flex;
+    border-top: 1px solid #909090;
+    margin-top: 50px;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 16px;
+
+    @include phone() {
+      margin-top: 30px;
+
+      p,
+      a,
+      b {
+        font-size: 14px;
+      }
+    }
+
+    @include smallPhone() {
+      margin-top: 20px;
+
+      flex-direction: column;
+      p,
+      a,
+      b {
+        font-size: 12px;
+      }
+    }
+
+    * {
+      color: #fff;
+      text-decoration: none;
+      margin: 0;
+    }
+
+    b {
+      color: #ec1c28;
+      text-decoration: underline;
+    }
+  }
+}
