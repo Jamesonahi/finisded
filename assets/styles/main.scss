@@ -14,6 +14,7 @@ body {
   margin: 0;
   padding: 0;
 }
+
 * {
   font-family: "Manrope", sans-serif;
   color: $secondary;
@@ -55,6 +56,7 @@ header {
         height: 24px;
         stroke: #fff;
       }
+
       span {
         color: #fff;
         font-size: 16px;
@@ -69,6 +71,7 @@ header {
         width: 18px;
         height: 18px;
       }
+
       span {
         font-size: 12px;
       }
@@ -83,15 +86,19 @@ header {
 
     li {
       list-style-type: none;
+
       a {
         transition: all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
         text-decoration: none;
         padding: 10px 20px;
+
         @include mobile() {
           padding: 10px 15px;
         }
+
         font-weight: 500;
-        font-family: "Syne", sans-serif;
+        font-family: "Syne",
+        sans-serif;
       }
     }
   }
@@ -101,6 +108,7 @@ header {
     justify-content: start;
     align-items: center;
     gap: 40px;
+
     @include mobile() {
       gap: 30px;
     }
@@ -158,9 +166,11 @@ header {
         }
       }
     }
+
     .active {
       color: $primary;
     }
+
     a {
       &:hover {
         color: $primary;
@@ -195,11 +205,13 @@ header {
     background: $primaryDark;
     align-items: end;
     padding: 20px 10%;
+
     span {
       height: 40px;
       width: fit-content;
       display: block;
     }
+
     ul {
       display: flex;
       flex-direction: column;
@@ -208,17 +220,21 @@ header {
       margin: 0;
       padding: 0;
       gap: 10px;
+
       li {
         list-style-type: none;
+
         a {
           text-decoration: none;
           display: block;
           padding: 10px 20px;
           transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
           &:hover {
             color: #ec1c28;
           }
         }
+
         .active {
           color: #ec1c28;
         }
@@ -229,6 +245,7 @@ header {
 
 .toggle {
   display: none;
+
   @include phone() {
     display: flex;
   }
@@ -242,6 +259,7 @@ header {
   position: relative;
   background: $secondary;
   width: 100%;
+
   .swiper-slide {
     // margin-right: 0px !important;
     // background: #ec1c28;
@@ -264,13 +282,15 @@ header {
   0% {
     transform: scale(1.05);
   }
+
   100% {
     transform: scale(1);
   }
 }
 
 .swiper-slide-active img {
-  animation: zoomIn 8s infinite; /* Adjust duration as needed */
+  animation: zoomIn 8s infinite;
+  /* Adjust duration as needed */
 }
 
 #talent-join {
@@ -311,16 +331,20 @@ header {
 
   @include mobile() {
     padding: 50px 4%;
+
     p,
     h3 {
       width: 100%;
     }
+
     p {
       font-size: 16px;
     }
+
     h3 {
       font-size: 24px;
     }
+
     a {
       font-size: 21px;
       margin: 16px auto;
@@ -329,12 +353,15 @@ header {
 
   @include semiPhone() {
     padding: 40px 4%;
+
     p {
       font-size: 14px;
     }
+
     h3 {
       font-size: 21px;
     }
+
     a {
       font-size: 16px;
       margin: 12px auto;
@@ -386,6 +413,7 @@ header {
     background-color: #e3e3e3;
     min-height: 160px;
     padding: 30px 10%;
+
     h1,
     p {
       margin: 0;
@@ -414,6 +442,7 @@ header {
       h1 {
         font-size: 15px;
       }
+
       p {
         font-size: 28px;
       }
@@ -426,6 +455,7 @@ header {
       h1 {
         font-size: 14px;
       }
+
       p {
         font-size: 24px;
       }
@@ -438,6 +468,7 @@ header {
         font-size: 12px;
         margin: 0;
       }
+
       p {
         font-size: 18px;
       }
@@ -458,6 +489,7 @@ header {
 
     @include mobile() {
       padding: 60px 6%;
+
       h3 {
         font-size: 27px;
       }
@@ -465,6 +497,7 @@ header {
 
     @include phone() {
       padding: 50px 5%;
+
       h3 {
         font-size: 24px;
       }
@@ -472,6 +505,7 @@ header {
 
     @include smallPhone() {
       padding: 30px 3%;
+
       h3 {
         font-size: 20px;
       }
@@ -529,14 +563,17 @@ header {
       p {
         font-size: 16px;
       }
+
       .grid-image {
         display: grid;
         margin-top: 6px;
 
         grid-template-columns: repeat(2, 1fr);
         gap: 5px;
+
         img {
           border-radius: 10px;
+
           &:nth-child(odd) {
             display: block;
           }
@@ -560,13 +597,16 @@ header {
       @include mobile() {
         margin-bottom: 30px;
       }
+
       @include phone() {
         margin-bottom: 25px;
       }
+
       @include semiPhone() {
         margin-bottom: 18px;
       }
     }
+
     ul {
       margin: 0;
       padding: 0;
@@ -600,6 +640,7 @@ header {
 
         @include phone() {
           font-size: 14px;
+
           strong {
             font-size: 16px;
           }
@@ -607,6 +648,7 @@ header {
 
         @include smallPhone() {
           font-size: 13px;
+
           strong {
             font-size: 15px;
           }
@@ -614,6 +656,7 @@ header {
       }
     }
   }
+
   #whatwedo {
     background: rgba(#2e4975, 0.12);
 
@@ -642,6 +685,7 @@ header {
 
       a {
         transition: all 0.5 cubic-bezier(0.215, 0.61, 0.355, 1);
+
         &:hover {
           color: #ec1c28;
         }
@@ -653,6 +697,7 @@ header {
         margin-bottom: 15px;
         display: block;
       }
+
       p {
         font-size: 17px;
         margin: 0;
@@ -664,11 +709,13 @@ header {
         display: flex;
         flex-wrap: wrap;
         gap: 10px 14px;
+
         a {
           text-decoration: none;
           display: flex;
           gap: 2px;
           align-items: center;
+
           img {
             width: 27px;
             height: 27px;
@@ -678,6 +725,7 @@ header {
               height: 18px;
             }
           }
+
           font-size: 14px;
 
           @include semiPhone() {
@@ -694,6 +742,7 @@ header {
 
   @include mobile() {
     padding: 50px 6%;
+
     ul {
       grid-template-columns: repeat(2, 1fr);
 
@@ -702,6 +751,7 @@ header {
           font-size: 22px;
           margin-bottom: 13px;
         }
+
         p {
           font-size: 16px;
           margin-bottom: 15px;
@@ -719,6 +769,7 @@ header {
           font-size: 20px;
           margin-bottom: 8px;
         }
+
         p {
           font-size: 15px;
           margin-bottom: 10px;
@@ -729,6 +780,7 @@ header {
 
   @include semiPhone() {
     padding: 50px 4%;
+
     ul {
       display: flex;
       flex-direction: column;
@@ -738,6 +790,7 @@ header {
           font-size: 18px;
           margin-bottom: 6px;
         }
+
         p {
           font-size: 14px;
           margin-bottom: 5px;
@@ -796,37 +849,45 @@ footer {
       * {
         color: #e3e3e3;
       }
+
       strong {
         font-size: 20px;
         margin-bottom: 20px;
         display: block;
+
         @include semiPhone() {
           margin-bottom: 8px;
           font-size: 18px;
         }
       }
+
       b {
         font-weight: 500;
       }
+
       p {
         font-weight: 300;
+
         @include semiPhone() {
           font-size: 14px;
         }
       }
     }
   }
+
   #social-group {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     gap: 2px 14px;
+
     span {
       display: flex;
       align-items: center;
       width: fit-content;
       height: 30px;
       gap: 4px;
+
       img {
         width: 20px;
       }
@@ -838,6 +899,7 @@ footer {
       span {
         gap: 4px;
         font-size: 14px;
+
         img {
           width: 16px;
         }
@@ -867,6 +929,7 @@ footer {
       margin-top: 20px;
 
       flex-direction: column;
+
       p,
       a,
       b {
