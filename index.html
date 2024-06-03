@@ -75,7 +75,7 @@
           career to new heights. Click the link below to begin your journey
           towards artistic excellence.
         </p>
-        <a href="http://" target="_blank" rel="noopener noreferrer">Begin Your Journey Now</a>
+        <a href="./form.html" target="_blank" rel="noopener noreferrer">Begin Your Journey Now</a>
       </section>
     </main>
 
@@ -124,36 +124,10 @@
       </div>
     </footer>
   </div>
+
+  <script src="./assets/libraries/sliderjs/swiper-bundle.min.js"></script>
+  <script src="./js/swipper.js"></script>
+  <script src="./js/index.js"></script>
 </body>
-<script src="./assets/libraries/sliderjs/swiper-bundle.min.js"></script>
-<!-- Initialize Swiper -->
-<!-- Initialize Swiper -->
-<script>
-  var swiper = new Swiper(".heroslide", {
-    slidesPerView: "auto",
-    speed: 4000,
-    loop: true,
-    autoplay: {
-      delay: 4000,
-      disableOnInteraction: false,
-    },
-    pagination: {
-      //   el: ".swiper-pagination",
-      clickable: true,
-    },
-  });
-
-  const cancelBtn = document.getElementById("cancelBtn");
-  const openBtn = document.getElementById("open");
-  const mobileNav = document.querySelector(".mobile");
-
-  cancelBtn.addEventListener("click", function () {
-    mobileNav.classList.remove("toggle");
-  });
-
-  openBtn.addEventListener("click", function () {
-    mobileNav.classList.add("toggle");
-  });
-</script>
 
 </html>

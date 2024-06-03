@@ -1,21 +1,11 @@
-const form = document.getElementById("user-form");
-const formButton = document.getElementById("form-button");
+const cancelBtn = document.getElementById("cancelBtn");
+const openBtn = document.getElementById("open");
+const mobileNav = document.querySelector(".mobile");
 
-form.addEventListener("submit", (e) => {
-    e.preventDefault();
+cancelBtn.addEventListener("click", function () {
+    mobileNav.classList.remove("toggle");
+});
 
-    const formData = new FormData(e.target);
-    const sheetAPI = "https://sheetdb.io/api/v1/nb8kv0htgvfan";
-
-    formButton.disabled = true;
-
-    fetch(sheetAPI, {
-        method: "POST",
-        body: formData
-    })
-    .then(() => alert("Form submission successful!"))
-    .catch(() => alert("Form submission failed! Try again."))
-    .finally(() => formButton.disabled = false)
-})
-
-// https://sheetdb.io/api/v1/nb8kv0htgvfan
+openBtn.addEventListener("click", function () {
+    mobileNav.classList.add("toggle");
+});
